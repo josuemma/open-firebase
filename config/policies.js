@@ -19,6 +19,11 @@
 
 module.exports.policies = {
 
+  AppController: {
+    restricted: ['sessionAuth'],
+    open: true
+  }
+
   /***************************************************************************
   *                                                                          *
   * Default policy for all controllers and actions (`true` allows public     *
