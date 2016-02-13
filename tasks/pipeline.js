@@ -16,10 +16,7 @@ var tmpPath = '.tmp/public/';
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/bootstrap.css',
-  'styles/bootstrap-theme.css',
-  'styles/**/*.css',
-  '*.css'
+  'styles/**/*.css'
 ];
 
 
@@ -30,37 +27,12 @@ var jsFilesToInject = [
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
 
-  'js/dependencies/angular.js',
-  'js/dependencies/angular-route.js',
-  'js/dependencies/jquery.js',
-
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
-  'js/services.js',
-  'js/controllers.js',
-  'js/filters.js',
-  'js/directives.js',
-  'js/services.js',
-  'js/controllers.js',
-  'js/filters.js',
-  'js/directives.js',
-
-  'view1/view1.js',
-  'view2/view2.js',
-
-
-  'js/app.js',
-  'js/services.js',
-  'js/controllers.js',
-  'js/filters.js',
-  'js/directives.js',
-
-  'components/**/*.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
   'js/**/*.js',
-  'app.js'
 
   // Use the "exclude" operator to ignore files
   // '!js/ignore/these/files/*.js'
