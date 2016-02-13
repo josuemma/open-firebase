@@ -11,12 +11,12 @@
     "bootstrap": "^3.3.6"
   },
   "exportsOverride": {
+    "jquery": {
+      "js": "dist/jquery.min.js"
+    },
     "bootstrap": {
       "js":  "dist/js/bootstrap.min.js",
       "css": "dist/css/*.css"
-    },
-    "jquery": {
-      "js": "dist/jquery.min.js"
     }
   },
   "name": "open-firebase",
