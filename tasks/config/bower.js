@@ -6,18 +6,17 @@
  * Installs bower components and copies the required files into the assets folder structure.
  *
  */
-
 module.exports = function(grunt) {
 
 	grunt.config.set('bower', {
 		install: {
 			options: {
 				targetDir: './assets/vendor',
-				layout: 'byType',
 				install: true,
-				verbose: false,
+				copy: true,
+				verbose: true,
 				cleanTargetDir: true,
-				cleanBowerDir: true,
+				cleanBowerDir: false,
 				bowerOptions: {}
 			}
 		}

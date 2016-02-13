@@ -10,6 +10,15 @@
     "jquery": "^2.2.0",
     "bootstrap": "^3.3.6"
   },
+  "exportsOverride": {
+    "bootstrap": {
+      "js":  "dist/js/bootstrap.min.js",
+      "css": "dist/css/*.css"
+    },
+    "jquery": {
+      "js": "dist/jquery.min.js"
+    }
+  },
   "name": "open-firebase",
   "version": "0.0.0",
   "author": "sahil",
