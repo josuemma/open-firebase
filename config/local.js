@@ -83,3 +83,9 @@ module.exports = {
    // environment: process.env.NODE_ENV || 'development'
 
 };
+
+module.exports.permissions = {
+  adminUsername: 'admin',
+  adminEmail: 'admin@example.com',
+  adminPassword: 'admin1234'
+}
