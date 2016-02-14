@@ -8,9 +8,7 @@
 module.exports = {
 
   attributes: {
-  	title: 'string',  
-	text: 'string',  
-	category: 'string'  
+  	data: 'json'
   }
 };
 
