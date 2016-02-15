@@ -35,9 +35,12 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  '/firebaselogin': {
+  '/signin': {
     view: 'login'
   },
+  '/signup': {
+    view: 'signup'
+  }
   
 
   /***************************************************************************

@@ -7,33 +7,51 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Open Firebase</a>
+            <a class="navbar-brand" href="/">Open Firebase</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Overview</a>
-                </li>
-                <li><a href="#">Features</a>
-                </li>
-                <li><a href="#">Documentation</a>
-                </li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li class="active"><a href="#">Overview</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="https://github.com/open-firebase/open-firebase/wiki">Documentation</a></li>
+                <li><a href="/signin">Login</a></li>
+                <li><a href="/signup">Sign Up</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
 </nav>
-<header class="jumbotron">
+<style>
+#signup{
+    background-color: #311B92;
+    border-color: #673AB7;
+    text-align: center;
+    height: 45px;
+    color: white;
+    display: block;
+}
+</style>
+<header class="jumbotron" style="background-color: #2962FF; color: white;">
     <div class="container">
         <div class="row row-header"><p style="padding: 30px;"></p></div>
         <div class="row row-header">
-                <div class="col-xs-12 col-sm-12" style="text-align: center;">
-                    <h1>Open Firebase</h1>
-                    <p style="padding:10px;"></p>
-                    <p>An open-source alternative to Firebase for your Web and Android applications.</p>
+                <div class="col-xs-12 col-sm-8" style="text-align: center;">
+                    <h1>Build extraordinary apps.</h1>
+                    <p>An open-source and powerful platform for your mobile and web and application</p>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="username" name="username" class="form-control" placeholder="Pick a Username" style="height: 40px; margin-bottom: 5px;"/>
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" style="height: 40px; margin-bottom: 5px;"/>
+                            <input type="password" name="password" class="form-control" placeholder="Create a password" style="height: 40px; margin-bottom: 5px;"/>
+                        </div>
+                        <div class="form-group">
+                            <button id="signup" class="btn btn-block"><span style="display:inline; vertical-align: middle;">Sign up for Open Firebase</span></button>
+                        </div>
+                    </form>
                 </div>
             </div>
     </div>
