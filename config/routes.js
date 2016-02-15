@@ -40,6 +40,9 @@ module.exports.routes = {
   },
   '/signup': {
     view: 'signup'
+  },
+  '/dashboard': {
+    view: 'dashboard'
   }
   
 
