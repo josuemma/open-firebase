@@ -49,7 +49,14 @@ module.exports.policies = {
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
 
-  '*': [
+  'DashboardController': [
+    'basicAuth',
+    'passport',
+    'sessionAuth'
+  ],
+
+  
+  'AppController': [
     'basicAuth',
     'passport',
     'sessionAuth',

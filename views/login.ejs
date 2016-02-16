@@ -5,14 +5,14 @@
 			<h3 style="text-align: center; margin-bottom: 30px;">Sign in to OpenFirebase</h3>
 			<div class="panel panel-default">
 			  	<div class="panel-body">
-			   		<form role="form">
+			   		<form role="form" id="loginform">
 			  		  <div class="form-group">
-					      <label for="exampleInputEmail1">Username or Email</label>
-					      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" style="height: 40px;">
+					      <label for="email">Username or Email</label>
+					      <input type="email" class="form-control" id="email" placeholder="Enter email" style="height: 40px;">
 					  </div>
 					  <div class="form-group">
-					      <label for="exampleInputPassword1">Password <a href="#">  (forgot password?)</a></label>
-					      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="height: 40px;">
+					      <label for="password">Password <a href="#">  (forgot password?)</a></label>
+					      <input type="password" class="form-control" id="password" placeholder="Password" style="height: 40px;">
 					  </div>
 					  <button type="submit" class="btn btn-success btn-block" style="height: 40px;">Sign in</button>
 					</form>
@@ -31,20 +31,35 @@
 	</div>
 </div>
 <script>
-// $("#loginform").submit( function( event ){
-// 	event.preventDefault();
-// 	var email = $("#email").val();
-// 	var pwd = $("#pwd").val();
-// 	console.log("Email: " + email + ", Pwd: " + password);
-// 	var posting = $.post( url, { s: term } );
+$("#loginform").submit( function( event ){
+	event.preventDefault();
+	var email = $("#email").val();
+	var pwd = $("#password").val();
+	console.log("Email: " + email + ", Pwd: " + password);
+	//var posting = $.post( url, { s: term } );
  
-// 	var url = "/auth/local";
-// 	var posting = $.post(url, {identifies: email, password: pwd});
-
-// 	// Put the results in a div
-// 	posting.done(function( data ) {
-// 		var content = $( data ).find( "#content" );
-// 	    $( "#result" ).empty().append( content );
-// 	});
-// });
+	var url = "/auth/local";
+	console.log()
+	//posting
+	$.ajax({
+		method: "POST",
+		url: "/auth/local",
+		data: {identifier: email, password: pwd},
+	}).done(function(msg){
+		console.log(msg);
+		if(msg["email"] == email || msg["username"] == email){
+			console.log("Redirecting");
+			window.location.href="/dashboard";
+		}
+	});
+	// $.post(url, {identifier: email, password: pwd}, function(data, status){
+	// 	console.log(status);
+	// 	console.log(data);
+ //    });
+	// // Put the results in a div
+	// posting.done(function( data ) {
+	// 	var content = $( data ).find( "#content" );
+	//     $( "#result" ).empty().append( content );
+	// });
+});
 </script>
