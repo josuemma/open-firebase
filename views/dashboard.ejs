@@ -1,16 +1,3 @@
-<style>
-#infobtn{
-    background-color: #311B92;
-    border-color: #673AB7;
-    text-align: center;
-    height: 45px;
-    color: white;
-    display: block;
-}
-#infobtn:hover{
-    color: #BDBDBD;
-}
-</style>
 <nav class="navbar navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -58,21 +45,56 @@
 
 <div class="row">
     <div class="col-sm-2" style="margin-top: 50px; margin-left: 30px;">
-        <div class="panel panel-default" style="padding: 10px; width: 300px; background-color: #311B92; border-color: #673AB7; color: white;">
+        <div class="panel panel-default" id="newapp" style="padding: 10px; background-color: #F5F5F5;">
             <div class="panel-body">
-                <form role="form">
+                <form role="form" id="createnewapp">
                     <div class="form-group" style="margin-top: 20px;">
                         <label>APP NAME</label>
-                        <input class="form-control" style="height: 40px; width: 250px; background-color: #2962FF; color: white;">
+                        <input class="form-control" id="appname" style="height: 40px;">
                     </div>
                     <div class="form-group">
                         <label>APP URL</label>
-                        <input class="form-control"  style="height: 40px; width: 250px; background-color: #2962FF; color: white;">
+                        <input class="form-control" id="appurl" style="height: 40px;">
                     </div>
-                    <button class="btn btn-primary btn-block" style="margin-top: 50px; height: 40px; width: 250px;  background-color: #2962FF; color: white;">CREATE NEW APP</button>
+                    <button class="btn btn-primary btn-block" style="margin-top: 50px; height: 40px; background-color: #2962FF; color: white;">CREATE NEW APP</button>
                 </form>
             </div>
         </div>
     </div>
+    <% apps.forEach(function(app) { %>
+        <div class="col-sm-2" style="margin-top: 50px; margin-left: 30px;">
+                <div class="panel panel-default" id=<%= app.name %> style="padding: 10px; background-color: #F5F5F5; height: 306.111px;">
+                        <div class="panel-body">
+                            <div style="margin-top: 20px; text-align: center;">
+                                <h1 ><%= app.name %></h2>
+                                <br>
+                                <h4><%= app.url %></h4>
+                            </div>
+                            <button class="btn btn-primary btn-block" style="margin-top: 97px; height: 40px; background-color: #2962FF; color: white;">Manage App</button>
+                        </div>
+                </div>
+        </div>
+    <% }); %>
 </div>
+<script>
+$("#createnewapp").submit(function(e){
+    e.preventDefault();
+    var name = $("#appname").val();
+    var url = $("#appurl").val();
+    $.ajax({
+        method: "POST",
+        url: "/app/create",
+        data: {
+            name: name,
+            url: url,
+            data: {'test': 'test'}
+        }
+    }).done(function(msg){
+        console.log(msg);
+
+    });
+    console.log("Finished");
+    window.location.reload(true);
+})
+</script>
 <%- partial ('footer.ejs') %>

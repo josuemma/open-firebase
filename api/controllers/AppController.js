@@ -28,17 +28,26 @@ module.exports = {
 	create: function(req, res){
 		if(req.body['data']){
 			 App.create({
-			 	data: req.body['data']
-			 }).exec(function (err, created){
+			 	data: req.body['data'],
+			 	name: req.body['name'],
+			 	url: req.body['url'],
+			 	owner: req.user
+			 }).exec(function createApp(err, created){
 			 	if(err){
 			 		console.log(err);
-			 		req.send("failed");
+			 		return res.send("failed");
 			 	} else{
 			 		console.log('Successfully created App!');
-			 		req.send("success");	
+			 		return res.send("success");	
 			 	}
 			 });
 		}
-		return res.send("success");
 	}
+	// all: function(req, res){
+	// 	if(req.params['id']){
+	// 		App.find({
+	// 			'owner': 
+	// 		})
+	// 	}
+	// }
 };
