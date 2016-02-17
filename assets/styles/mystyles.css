@@ -103,3 +103,18 @@ html, body{
   color: white;
   margin-bottom: 0px;
 }
+
+
+.dropdown-header {
+    display: block;
+    padding: 3px 20px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #777;
+    float: left;
+    white-space: nowrap;
+}
+
+.dropdown-header:hover {
+  background-color: white;
+}
