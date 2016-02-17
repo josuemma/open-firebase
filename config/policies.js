@@ -55,6 +55,12 @@ module.exports.policies = {
     'sessionAuth'
   ],
 
+  'HomeController': [
+  ],
+
+  'UserController': {
+    'create': []
+  },
   
   'AppController': [
     'basicAuth',
