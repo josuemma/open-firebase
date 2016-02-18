@@ -6,21 +6,24 @@
  */
 var sails = require('sails');
 var fs = require('fs');
-
+var url = require('url');
 
 module.exports = {
 	open: function(req, res){
-		if(req.params['id']){
+		var url_parts = url.parse(req.url, true);
+		var query = url_parts.query;
+		if(query['id']){
 			App.find({
-				'id': req.params['id']
-			}).exec(function(err, records){
+				'id': query['id']
+			}).exec(function(err, AppWithId){
 				if(err){
 					console.log("App not found");
 						console.log(err);
-						req.send("failed");
+						res.send("failed");
 				} else{
-					console.log("App opened with id: " + req.params['id']);
-					req.send("success");
+					console.log("App opened with id: " + query['id']);
+					console.log(AppWithId);
+					res.view('app', {app: AppWithId[0]});
 				}
 			});
 		}

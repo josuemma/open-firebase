@@ -39,7 +39,8 @@ module.exports.routes = {
   'get /signup': {
     view: 'signup'
   },
-  'get /dashboard': 'DashboardController.open'
+  'get /dashboard': 'DashboardController.open',
+  'get /app': 'AppController.open'
   
 
   /***************************************************************************

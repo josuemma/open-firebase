@@ -21,7 +21,6 @@ module.exports = {
   			res.send("Failed");
   		} else{
   			//console.log(req.user);
-
   			//console.log(AllAppsByUser);
 			return res.view('dashboard', {user: req.user, apps: AllAppsByUser});
   		}

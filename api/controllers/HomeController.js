@@ -13,13 +13,12 @@ module.exports = {
    * `HomeController.open()`
    */
   open: function (req, res) {
-  	console.log(req);
-  	res.view('homepage');
-  	// if(req.user){
-  	// 	res.redirect('/dashboard');
-  	// } else{
-  	// 	res.render('homepage');
-  	// }
+  	console.log(req.subdomains);
+  	if(req.session.authenticated){
+  	 	res.redirect('/dashboard');
+  	} else{
+  	 	res.view('homepage');
+  	}
   }
 };
 

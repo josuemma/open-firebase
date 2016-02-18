@@ -26,7 +26,8 @@
     "sails-disk": "~0.10.0",
     "sails-generate-bower": "0.0.2",
     "sails-mongo": "^0.12.0",
-    "sails-permissions": "^2.1.11"
+    "sails-permissions": "^2.1.11",
+    "url": "^0.11.0"
   },
   "name": "open-firebase",
   "private": true,
