@@ -55,6 +55,15 @@ var templateFilesToInject = [
   'templates/**/*.html'
 ];
 
+var fontsToInject = [
+  'vendor/fonts/**/*.otf',
+  'vendor/fonts/**/*.svg',
+  'vendor/fonts/**/*.eot',
+  'vendor/fonts/**/*.ttf',
+  'vendor/fonts/**/*.woff',
+  'vendor/fonts/**/*.woff2'
+];
+
 
 
 // Prefix relative paths to source files so they point to the proper locations
@@ -63,6 +72,7 @@ var templateFilesToInject = [
 module.exports.cssFilesToInject = cssFilesToInject.map(transformPath);
 module.exports.jsFilesToInject = jsFilesToInject.map(transformPath);
 module.exports.templateFilesToInject = templateFilesToInject.map(transformPath);
+module.exports.fontsToInject = fontsToInject.map(transformPath);
 
 // Transform paths relative to the "assets" folder to be relative to the public
 // folder, preserving "exclude" operators.
