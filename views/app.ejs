@@ -28,6 +28,12 @@
   	<div class="row" style="background-color: #2962FF; color: white; padding-left: 15px;">
   		<h3><%= app.name %></h3>
   	</div>
+  	<script>
+  		console.log("Data: ");
+  		console.log(app.data);
+  	
+  	</script>
+  	<!-- Use JSTree(https://www.jstree.com/docs/json/) with EJS (https://github.com/tj/ejs) to show this json like Firebase -->
 	<%= JSON.stringify(app.data) %>
 	
   </div>
